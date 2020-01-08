@@ -1,3 +1,7 @@
+/*eslint-disable */
+//@ts-nocheck
+import { response } from "express";
+
   let long;
   let lat;
     window.addEventListener('load',()=>{
@@ -8,14 +12,13 @@
             long = position.coords.longitude;
             lat = position.coords.latitude;
 
-            
-
-            const api = 'https://api.darksky.net/forecast/cb89a804d2f77ba9bfe22f6c04288204/${lat},${long}'
+            const proxy = 'https://cors-anywhere.herokuapp.com/';
+            const api = '${proxy}https://api.darksky.net/forecast/cb89a804d2f77ba9bfe22f6c04288204/${lat},${long}';
 
         
         fetch(api)
-        .then(res =>{
-            return res.json()
+        .then(response =>{
+            return response.json()
         })
         .then(data => {
             console.log(data)
