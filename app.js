@@ -1,6 +1,5 @@
 /*eslint-disable */
-//@ts-nocheck
-import { response } from "express";
+//@ts-nocheck1
 
   let long;
   let lat;
