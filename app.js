@@ -1,28 +1,32 @@
+
 /*eslint-disable */
 //@ts-nocheck1
-
+import { response } from "express";
   let long;
   let lat;
+  
     window.addEventListener('load',()=>{
   
-
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(position => {
             long = position.coords.longitude;
             lat = position.coords.latitude;
 
-            (document).ready(function() {
             var proxy = 'https://cors-anywhere.herokuapp.com/';
-            var apiLinkDS = "https://api.darksky.net/forecast/e6af5b5feb891b272e18f5e2fc0370a6/38,-122";
+            var apiLinkDS = "${proxy}https://api.darksky.net/forecast/e6af5b5feb891b272e18f5e2fc0370a6/38,-122${long}${lat}";
 
-            document.ajax({
-                url: proxy + apiLinkDS,
-                success: function (data) { console.log(data); }
+            
+                fetch(apiLinkDS)
+                .then(response => {
+                    return response.text();
+                })
+                .then(data => {
+                    console.log(data);
+                });
              
         });
-    });
+    
 
-});
     }
 });
 
