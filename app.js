@@ -12,7 +12,7 @@
             long = position.coords.longitude;
             lat = position.coords.latitude;
 
-            var apiLinkDS = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/e6af5b5feb891b272e18f5e2fc0370a6/38,-122${long}${lat}";
+            var apiLinkDS = "https://crossorigin.me/https://api.darksky.net/forecast/e6af5b5feb891b272e18f5e2fc0370a6/38,-122${long}${lat}";
 
             
                 fetch(apiLinkDS)
