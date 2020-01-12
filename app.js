@@ -1,4 +1,4 @@
-header("Access-Control-Allow-Origin: *");
+
 /*eslint-disable */
 //@ts-nocheck1
 
@@ -12,12 +12,12 @@ header("Access-Control-Allow-Origin: *");
             long = position.coords.longitude;
             lat = position.coords.latitude;
 
-            var apiLinkDS = "https://crossorigin.me/https://api.darksky.net/forecast/e6af5b5feb891b272e18f5e2fc0370a6/38,-122${long}${lat}";
+            var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
+             apiLinkDS = "https://api.darksky.net/forecast/e6af5b5feb891b272e18f5e2fc0370a6/38,-122${long}${lat}"
 
             
-                fetch(apiLinkDS)
+                fetch(proxyUrl + apiLinkDS)
                 .then(response => {
-                    mode:'no-cors';
                     return response.json();
                 })
                 .then(data => {
