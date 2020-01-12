@@ -12,7 +12,7 @@
             long = position.coords.longitude;
             lat = position.coords.latitude;
 
-            var proxyUrl = 'https://crossorigin.me/',
+            var proxyUrl = 'https://mysterious-shelf-81552.herokuapp.com/',
              apiLinkDS = "https://api.darksky.net/forecast/e6af5b5feb891b272e18f5e2fc0370a6/38,-122${long}${lat}"
 
             
