@@ -1,6 +1,6 @@
 /*eslint-disable */
 //@ts-nocheck1
-
+let $;
   let long;
   let lat;
     window.addEventListener('load',()=>{
