@@ -17,6 +17,7 @@
             
                 fetch(apiLinkDS)
                 .then(response => {
+                    mode:'no-cors';
                     return response.text();
                 })
                 .then(data => {
