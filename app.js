@@ -1,4 +1,4 @@
-
+header("Access-Control-Allow-Origin: *");
 /*eslint-disable */
 //@ts-nocheck1
 
@@ -18,7 +18,7 @@
                 fetch(apiLinkDS)
                 .then(response => {
                     mode:'no-cors';
-                    return response.text();
+                    return response.json();
                 })
                 .then(data => {
                     console.log(data);
