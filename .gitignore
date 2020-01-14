@@ -2,3 +2,4 @@ node_modules
 reference
 javascript
 cors-anywhere
+.env

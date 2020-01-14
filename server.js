@@ -1,12 +1,19 @@
-const express = require('express');
-const http = require('http')
-const app = express();
-const path = require('path');
 
-//static folder
-app.use(express.static(path.join(__dirname)));
+if(process.env.NODE_ENV !== 'production'){
+    require('dotenv').config()
 
-//Listen on a port
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log('Server started on port ${PORT}'));
+}
+const DARK_API_KEY = process.env.DARK_API_KEY
+const express = require('express')
+const app = express()
 
+app.use(express.json())
+app.use(express.static('public'))
+
+app.post('/weather', (req, res) => {
+console.log(req.body)
+})
+
+app.listen(5500, () => {
+    console.log('Server Starting')
+})
